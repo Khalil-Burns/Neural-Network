@@ -29,7 +29,13 @@ public class Matrix {
         }
     }
     public Matrix(Matrix m) {
-        this.values = m.values;
+        this.values = new double[m.values.length][];
+        for (int i = 0; i < this.values.length; i++) {
+            this.values[i] = new double[m.values[i].length];
+            for (int j = 0; j < this.values[i].length; j++) {
+                this.values[i][j] = m.values[i][j];
+            }
+        }
         this.vector = m.vector;
     }
 
@@ -75,6 +81,29 @@ public class Matrix {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m1; j++) {
                 res.values[i][j] = this.values[i][j] - m.values[i][j];
+            }
+        }
+        return(res);
+    }
+    public Matrix subWithLRate(Matrix m, Network net) {
+        int n, m1, m2, p;
+        n = this.values.length;
+        m1 = this.values[0].length;
+        m2 = m.values.length;
+        p = m.values[0].length;
+        if (n != m2) {
+            System.out.println("ERROR: Matrix -> Matrix subtract(Matrix m), matrix rows do not match");
+            return(null);
+        }
+        if (m1 != p) {
+            System.out.println("ERROR: Matrix -> Matrix subtract(Matrix m), matrix columns do not match");
+            return(null);
+        }
+
+        Matrix res = new Matrix(n, m1, false);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m1; j++) {
+                res.values[i][j] = this.values[i][j] - (m.values[i][j] * (double)(net.learnRate / (double)net.miniBatchSize));
             }
         }
         return(res);
