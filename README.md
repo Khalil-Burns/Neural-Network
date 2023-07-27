@@ -19,5 +19,7 @@ How to run
 ==========
 
 Make sure you are in the /Neural-Network directory, then run:
+
 `javac Main.java`
+
 `java Main`
