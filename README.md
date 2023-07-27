@@ -10,6 +10,9 @@ Features include:
 - Matrix class
 - 96% accuracy on 10,000 testing images (accuracy varies due to randomness at the beginning of training)
 - Customizable network layers, learning rates, and number of training epochs
+- Images that weren't classified correctly get stored in errors.txt as images made from ASCII text
+- Data from the training epochs are stored in data.txt
+- Example lists of weights and biases are stored in "savedBiases" and "savedWeights" respectively
 
 This project is not just limited to the MNIST dataset, it was just the input and training data that I used because of the abundance of data that was available. The input layer can be adjusted to suit many different types of classification, as long as the input data is a floating number between 0 and 1. The output layer can also be adjusted accordingly, along with any hidden layers that you would like to include.
 
