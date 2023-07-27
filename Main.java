@@ -11,7 +11,7 @@ public class Main {
         n.allLabels = n.readLabels("t10k-labels.idx1-ubyte");
         n.train("train-images.idx3-ubyte", "train-labels.idx1-ubyte");
         //n.testWithPrintError();
-        //n.test();
+        n.test();
         /*try{
             FileInputStream in = new FileInputStream("train-images.idx3-ubyte");
 
