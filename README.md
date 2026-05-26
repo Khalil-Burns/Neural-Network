@@ -18,6 +18,10 @@ This project is not just limited to the MNIST dataset, it was just the input and
 
 The downsides of this project are all related to the structure of feed-forward neural networks. Some of these cons include overfitting, very computationally expensive, and lots of training data is required to get an accurate classification. With that said, this network gets the job done pretty well for the data that it is classifying right now, but there are definitely better alternatives out there.
 
+DEMO
+====
+https://github.com/user-attachments/assets/cead0ffb-52f3-4f99-89fd-987fffcef8b0
+
 How to run
 ==========
 
